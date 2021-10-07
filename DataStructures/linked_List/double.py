@@ -16,6 +16,7 @@ class DoubleLinkList:
         self.size = 0
 
     def insert(self, value):
+        '''Add a value'''
         node = Node(value)
         if self.tail is None:
             self.head = node
@@ -28,6 +29,7 @@ class DoubleLinkList:
             self.size += 1
 
     def insert_at(self, index, value):
+        '''Add a value in given index'''
         count = 0
         node = Node(value)
         itr = self.head
@@ -36,11 +38,13 @@ class DoubleLinkList:
                 node.prev = itr
                 node.next = itr.next
                 itr.next = node
+                self.size += 1
                 break
             count += 1
             itr = itr.next
 
     def __remove(self, node):
+        '''A private method to remove node'''
         if node.prev is None:
             self.head = node.next
         else:
@@ -53,14 +57,17 @@ class DoubleLinkList:
         self.size -= 1
 
     def remove_last(self):
+        '''remove the tail'''
         if self.tail:
             self.__remove(self.tail)
 
     def remove_first(self):
+        '''remove the head'''
         if self.head:
             self.__remove(self.head)
 
     def remove_same(self, value):
+        '''remove all the same data which is equivalent to value'''
         node = self.head
         while node:
             if node.value == value:
@@ -68,9 +75,11 @@ class DoubleLinkList:
             node = node.next
 
     def __len__(self):
+        '''return the leanght'''
         return self.size
     
     def __str__(self):
+        '''return all nodes as str'''
         itr = self.head
         output = []
         while itr:
