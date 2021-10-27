@@ -6,3 +6,6 @@ It is a python script to create gifs from any format of Images. It usage's pillo
 
 ## DataStructures
 I am learning data-Structurs using python and i will upload the python implementation in this directory.
+
+## Pyshare
+It is a script using python http.server module in backend and there is a .exe of this made by pyinstaller.
