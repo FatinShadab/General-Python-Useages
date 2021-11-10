@@ -17,12 +17,8 @@ Contents several Python mini projects which are beginner friendly and fun to mak
 > A simple downloader for youtube videos  using --  pytube, plyer, kivy, kivymd
 
 ### Qr-code_Maker
-<<<<<<< HEAD
-> It is a pyqt5 gui project. you can create qr-code and scan any qr-code by this. it usages opencv, pyqt5, > qrcode, webbrowser, opencv
+> It is a pyqt5 gui project. you can create qr-code and scan any qr-code by this. it usages opencv, pyqt5, qrcode, webbrowser, opencv
 
 ### Kcode
 > A script to encript msg and file data by keyboard alphabet indexing, you can customize the dict in 
 > secret.py to encript msg as you wish
-=======
-> It is a pyqt5 gui project. you can create qr-code and scan any qr-code by it. it usages opencv, pyqt5, qrcode, webbrowser, opencv
->>>>>>> 43d7295598e81d632537e44a0455536b87111607
