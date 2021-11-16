@@ -24,3 +24,4 @@ Contents several Python mini projects which are beginner friendly and fun to mak
 
 ### BTC_Miner
 > A simple btc miner prototype on I am working. It can run on both cpu and gpu and keeps track of output data in a json file. [status: ongoing]
+
