@@ -38,9 +38,14 @@ class DB:
             with open(self.db_path, "r") as db:
                 try:
                     data = json.load(db)
+                    if data[0] == None:
+                        data = []
                 except:
                     data = []
-                data[0].update(self._hashed_data(pwd))
+                if len(data) > 0:
+                    data[0].update(self._hashed_data(pwd))
+                else:
+                    data.append(self._hashed_data(pwd))
                 with open(self.db_path, "w") as db:
                     json.dump(data, db)
         except FileNotFoundError as e:
@@ -90,3 +95,17 @@ class DB:
             except KeyError as e:
                 self.entry({key:pwd})
                 return 0
+
+    def reset(self, master_pwd):
+        if self.is_master_pwd(master_pwd):
+            data = self._all_data()
+            for key in list(data):
+                if key != self.master_key:
+                    del data[key]
+            self._save_updated_data(data)
+        return 0
+
+    def format(self):
+        data = None
+        self._save_updated_data(data)
+        return 0

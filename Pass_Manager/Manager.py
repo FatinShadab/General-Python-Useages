@@ -1,5 +1,3 @@
-import getpass
-
 from pydb import DB
 
 
@@ -37,3 +35,12 @@ class MANAGER:
             return self.db.get_data(key=app)
         else:
             return self.MPWD_Error
+
+    def reset_db(self, master_pwd):
+        if self.db.is_master_pwd(master_pwd):
+            self.db.reset(master_pwd)
+        else:
+            return self.MPWD_Error
+
+    def format_db(self):
+        self.db.format()
