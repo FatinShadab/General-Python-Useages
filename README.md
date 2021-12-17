@@ -26,4 +26,4 @@ Contents several Python mini projects which are beginner friendly and fun to mak
 > A simple btc miner prototype on I am working. It can run on both cpu and gpu and keeps track of output data in a json file. [status: ongoing]
 
 ### Pass_Manager
-> A simple password manager app console/ qt5 version(ongoing) to store all of your password in one place and just remamber one master password instand of many (uages --> hashlib, os, json etc stlibs and pyqt5 for GUI)
+> A simple password manager app console/ qt5 version to store all of your password in one place and just remamber one master password instand of many (uages --> hashlib, os, json etc stlibs and pyqt5 for GUI)
