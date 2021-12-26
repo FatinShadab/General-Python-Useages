@@ -1,0 +1,405 @@
+<Check@MDCheckbox>:
+    group: 'group'
+    size_hint: None, None
+    size: dp(48), dp(48)
+
+Screen:
+
+    MDNavigationLayout:
+
+        ScreenManager:
+            id: screen_manager
+
+            Screen:
+                name: 'Home'
+
+                BoxLayout:
+                    adaptive_height: True
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        elevation: 10
+                        title: 'Project APP'
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open"), 'Menu']]
+        
+                        MDIconButton:
+                            icon: 'barcode-scan'
+                            pos: (((self.parent.size[0])/2)+530,self.pos[1])
+                            size_hint: None, None
+                            size: (60, 60)
+                            on_press: on_release: screen_manager.current = 'Scan'
+                            on_release: screen_manager.current = 'Scan'
+                            border: (0,0,0,0)
+
+                        MDIconButton:
+                            icon: 'creation'
+                            pos: (((self.parent.size[0])/2)+580,self.pos[1])
+                            size_hint: None, None
+                            size: (60, 60)
+                            on_press: on_release: screen_manager.current = 'Create'
+                            on_release: screen_manager.current = 'Create'
+                            border: (0,0,0,0)
+
+                    MDFloatLayout:
+                        radius: [25, 0, 0, 0]
+
+                        Image:
+                            source: 'HomeLogo.png'
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+
+                        # Commentout if needed !!!
+                        #MDLabel:
+                            #text: 'We Tokenize'
+                            #font_style: "H3"
+                            #halign: 'center'
+                            #pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+
+                        MDLabel:
+                            text: 'Just Another Bar Code'
+                            font_style: "H5"
+                            halign: 'center'
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.65}  
+
+                        MDRectangleFlatIconButton:
+                            text: "Scan"
+                            icon: "barcode-scan"
+                            theme_text_color: "Custom"
+                            text_color: 1, 0, 0, 1
+                            line_color: 0, 0, 1, 1
+                            on_press: on_release: screen_manager.current = 'Scan'
+                            on_release: screen_manager.current = 'Scan'
+                            pos_hint: {'center_x': 0.4, 'center_y': 0.5} 
+                            
+                        MDRectangleFlatIconButton:
+                            text: "Create"
+                            icon: "creation"
+                            theme_text_color: "Custom"
+                            text_color: 1, 0, 0, 1
+                            line_color: 0, 0, 1, 1
+                            on_press: on_release: screen_manager.current = 'Create'
+                            on_release: screen_manager.current = 'Create'
+                            pos_hint: {'center_x': 0.6, 'center_y': 0.5}
+                        
+                        Image:
+                            source: 'logo.png'
+                            size_hint_y: None
+                            height: dp(40)  # The fixed height you want
+                            pos_hint: {'center_x': 0.05, 'center_y': 0.05}
+
+                        MDLabel:
+                            text: "Technology Logo"
+                            font_style: "Subtitle2"
+                            pos_hint: {'center_x': .58, 'center_y': 0.05}   
+                        
+                        Image:
+                            source: 'logo.png'
+                            size_hint_y: None
+                            height: dp(40)  # The fixed height you want
+                            pos_hint: {'center_x': 0.87, 'center_y': 0.05}
+
+                        MDLabel:
+                            text: "Company Logo"
+                            font_style: "Subtitle2"
+                            pos_hint: {'center_x': 1.4, 'center_y': 0.05}
+
+                                         
+            Screen:
+                name: 'Scan'
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        elevation: 10
+                        title: 'Project APP'
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open"), 'Menu']]
+                        MDIconButton:
+                            icon: 'barcode-scan'
+                            pos: (((self.parent.size[0])/2)+530,self.pos[1])
+                            size_hint: None, None
+                            size: (60, 60)
+                            on_press: on_release: screen_manager.current = 'Scan'
+                            on_release: screen_manager.current = 'Scan'
+                            border: (0,0,0,0)
+
+                        MDIconButton:
+                            icon: 'creation'
+                            pos: (((self.parent.size[0])/2)+580,self.pos[1])
+                            size_hint: None, None
+                            size: (60, 60)
+                            on_press: on_release: screen_manager.current = 'Create'
+                            on_release: screen_manager.current = 'Create'
+                            border: (0,0,0,0)
+
+                    MDFloatLayout:
+                        radius: [25, 0, 0, 0]
+
+                        MDLabel:
+                            text: 'Live Scan OR Scan From Image '
+                            font_style: "H4"
+                            halign: 'center'
+                            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+
+                        MDRectangleFlatIconButton:
+                            text: "Camera"
+                            icon: "camera"
+                            theme_text_color: "Custom"
+                            text_color: 1, 0, 0, 1
+                            line_color: 0, 0, 1, 1
+                            on_press: app.camera()
+                            pos_hint: {'center_x': 0.4, 'center_y': 0.5}
+
+                        MDRectangleFlatIconButton:
+                            text: "  Choose"
+                            icon: "file"
+                            theme_text_color: "Custom"
+                            text_color: 1, 0, 0, 1
+                            line_color: 0, 0, 1, 1
+                            on_press: app.choose_file_scan()
+                            pos_hint: {'center_x': 0.6, 'center_y': 0.5}
+
+                        Image:
+                            source: 'logo.png'
+                            size_hint_y: None
+                            height: dp(40)  # The fixed height you want
+                            pos_hint: {'center_x': 0.05, 'center_y': 0.05}
+
+                        MDLabel:
+                            text: "Technology Logo"
+                            font_style: "Subtitle2"
+                            pos_hint: {'center_x': .58, 'center_y': 0.05}   
+                        
+                        Image:
+                            source: 'logo.png'
+                            size_hint_y: None
+                            height: dp(40)  # The fixed height you want
+                            pos_hint: {'center_x': 0.87, 'center_y': 0.05}
+
+                        MDLabel:
+                            text: "Company Logo"
+                            font_style: "Subtitle2"
+                            pos_hint: {'center_x': 1.4, 'center_y': 0.05}
+
+                
+            Screen:
+                name: 'Create'
+
+                BoxLayout:
+                    orientation: 'vertical'
+
+                    MDToolbar:
+                        elevation: 10
+                        title: 'JAB CODE'
+                        left_action_items: [['menu', lambda x: nav_drawer.set_state("open"), 'Menu']]
+                        MDIconButton:
+                            icon: 'barcode-scan'
+                            pos: (((self.parent.size[0])/2)+530,self.pos[1])
+                            size_hint: None, None
+                            size: (60, 60)
+                            on_press: on_release: screen_manager.current = 'Scan'
+                            on_release: screen_manager.current = 'Scan'
+                            border: (0,0,0,0)
+
+                        MDIconButton:
+                            icon: 'creation'
+                            pos: (((self.parent.size[0])/2)+580,self.pos[1])
+                            size_hint: None, None
+                            size: (60, 60)
+                            on_press: on_release: screen_manager.current = 'Create'
+                            on_release: screen_manager.current = 'Create'
+                            border: (0,0,0,0)
+
+                    BoxLayout:
+                        orientation: "vertical"
+
+                        MDLabel:
+                            text: "Create Something"
+                            font_style: "H4"
+                            halign: "center"
+
+                        MDFloatLayout:
+                            MDLabel:
+                                text: "Number of Colors :"
+                                pos_hint: {'center_x': .505, 'center_y': .5}
+
+                            MDLabel:
+                                text: '4'
+                                pos_hint: {'center_x': .8, 'center_y': .5}
+                            Check:
+                                active: True
+                                pos_hint: {'center_x': .28, 'center_y': .5}
+                            
+                            Check:
+                                pos_hint: {'center_x': .35, 'center_y': .5}
+                            MDLabel:
+                                text: '8'
+                                pos_hint: {'center_x': .87, 'center_y': .5}
+
+                            MDRectangleFlatIconButton:
+                                text: 'Choose'
+                                icon: 'file'
+                                size_hint: None, None
+                                size: (70, 70)
+                                border: (0,0,0,0)
+                                on_press: app.choose_file_create()
+                                pos_hint: {'center_x': .95, 'center_y': .5}
+
+                    BoxLayout:
+                        orientation: "horizontal"
+
+                        BoxLayout:
+                            orientation: "vertical"
+
+                            BoxLayout:
+                                orientation: "horizontal"
+                                padding: '8dp'
+                                spacing: '8dp'
+                                MDLabel:
+                                    text: "Module size in pixel :"
+                                    halign: 'left'
+                                MDSlider:
+                                    min: 0
+                                    max: 100
+                                    value: 40
+                                    hint: True
+                            
+                            BoxLayout:
+                                orientation: "horizontal"
+                                padding: '8dp'
+                                spacing: '8dp'
+                                MDLabel:
+                                    text: "Primary symbol version x :"
+                                    halign: 'left'
+                                MDSlider:
+                                    min: 0
+                                    max: 100
+                                    value: 40
+                                    hint: True
+
+                            BoxLayout:
+                                orientation: "horizontal"
+                                padding: '8dp'
+                                spacing: '8dp'
+                                MDLabel:
+                                    text: "Primary symbol version y :"
+                                    halign: 'left'
+                                MDSlider:
+                                    min: 0
+                                    max: 100
+                                    value: 40
+                                    hint: True
+
+                            BoxLayout:
+                                orientation: "horizontal"
+                                padding: '8dp'
+                                spacing: '8dp'
+                                MDLabel:
+                                    text: "Primary error correction level :"
+                                    halign: 'left'
+                                MDSlider:
+                                    min: 0
+                                    max: 100
+                                    value: 40
+                                    hint: True
+                            
+                            MDFloatLayout:
+                                radius: [25, 0, 0, 0]
+
+                                MDRectangleFlatIconButton:
+                                    text: "Create"
+                                    icon: "creation"
+                                    theme_text_color: "Custom"
+                                    text_color: 1, 0, 0, 1
+                                    line_color: 0, 0, 1, 1
+                                    on_press: app.create()
+                                    pos_hint: {'center_x':.5, 'center_y':0}
+
+                        ScrollView:
+                            BoxLayout:
+                                orientation: 'vertical'
+                                MDLabel:
+                                    text: '1 primary and 0 secondary symbols'
+                                    halign: 'center'
+
+                                MDLabel:
+                                    text: 'Primary symbol width: 252'
+                                    halign: 'center'
+
+                                MDLabel:
+                                    text: 'Primary symbol hight: 252'
+                                    halign: 'center'
+
+                                MDLabel:
+                                    text: 'Approximate capacity in bits: 573 or 95 alphanumeric characters'
+                                    halign: 'center'
+
+                                Widget:
+                                
+                    MDFloatLayout:
+                        radius: [25, 0, 0, 0]
+
+                        Image:
+                            source: 'logo.png'
+                            size_hint_y: None
+                            height: dp(40)  # The fixed height you want
+                            pos_hint: {'center_x': 0.05, 'center_y': 0.15}
+
+                        MDLabel:
+                            text: "Technology Logo"
+                            font_style: "Subtitle2"
+                            pos_hint: {'center_x': .58, 'center_y': 0.15}   
+                        
+                        Image:
+                            source: 'logo.png'
+                            size_hint_y: None
+                            height: dp(40)  # The fixed height you want
+                            pos_hint: {'center_x': 0.87, 'center_y': 0.15}
+
+                        MDLabel:
+                            text: "Company Logo"
+                            font_style: "Subtitle2"
+                            pos_hint: {'center_x': 1.4, 'center_y': 0.15}
+
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                ContentNavigationDrawer:
+                    orientation: 'vertical'
+                    padding: "8dp"
+                    spacing: "8dp"
+
+                    Image:
+                        id: logo
+                        size_hint: (1,1)
+                        source: "logo.png"
+
+                    MDLabel:
+                        text: "Project APP"
+                        font_style: "H3"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+
+                    ScrollView:
+                        MDList:
+                            OneLineIconListItem:
+                                on_release: screen_manager.current = 'Home'
+                                text: 'Home'
+                                IconLeftWidget:
+                                    icon: 'home'
+
+                            OneLineIconListItem:
+                                on_release: screen_manager.current = 'Scan'
+                                text: 'Scan'
+                                IconLeftWidget:
+                                    icon: 'barcode-scan'
+                                
+
+                            OneLineIconListItem:
+                                on_release: screen_manager.current = 'Create'
+                                text: 'Create'
+                                IconLeftWidget:
+                                    icon: 'creation'

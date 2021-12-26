@@ -27,3 +27,6 @@ Contents several Python mini projects which are beginner friendly and fun to mak
 
 ### Pass_Manager
 > A simple password manager app console/ qt5 version to store all of your password in one place and just remamber one master password instand of many (uages --> hashlib, os, json etc stlibs and pyqt5 for GUI)
+
+### KIVY_UI
+> This folder contains kivy_ui examples designed by kv lang.
