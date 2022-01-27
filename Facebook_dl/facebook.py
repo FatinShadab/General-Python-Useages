@@ -42,9 +42,9 @@ class FaceBook:
             urllib.request.urlretrieve(self.download_url(), f"{self.name}.mp4")
             
         except (ConnectionResetError) as e:
-            print('Slow Internet Connection, please check your Internet Connection!')
+            print(f'Slow Internet Connection, please check your Internet Connection!')
         except:
-            print('Slow Internet Connection, please check your Internet Connection!')
+            print(f'Slow Internet Connection, please check your Internet Connection!')
         
 
 

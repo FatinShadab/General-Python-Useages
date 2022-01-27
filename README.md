@@ -30,3 +30,6 @@ Contents several Python mini projects which are beginner friendly and fun to mak
 
 ### KIVY_UI
 > This folder contains kivy_ui examples designed by kv lang.
+
+### Duplicate_Sentence_Detector
+> This a python script for checking for duplicate or similar sentences using - [spacy, logging, warnings, tqdm]
