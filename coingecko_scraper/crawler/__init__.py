@@ -1,0 +1,1 @@
+from .bot import COINGECKO_BOT
