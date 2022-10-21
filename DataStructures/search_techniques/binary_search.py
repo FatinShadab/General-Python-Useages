@@ -1,6 +1,6 @@
 """
         *** TO USE BINARY SEARCH IN A ARRAY, THE ARRAY HAS TO BE SORTED (ASENDING ORDER)! ***
-        *** TIME COMPLEXITY : LOG(N)
+        *** TIME COMPLEXITY : LOG(N) [LOG with base 2]
 
         If the input is a array of size 10, given below,
 
@@ -124,5 +124,5 @@ if __name__ == "__main__":
         print(f"\n The element - {ele} is at index - {ele_idx_1} of array - {array} [Recursive Function][search time : {timedelta(seconds=end1-start1)}]")
         print(f"\n The element - {ele} is at index - {ele_idx_2} of array - {array} [While Loop][search time : {timedelta(seconds=end2-start2)}]")
     else:
-        print(f"Didn't found element - {ele} in array - {array} [search time : {timedelta(seconds=end-start)}]")
+        print(f"Didn't found element - {ele} in array - {array} [search time : {timedelta(seconds=(end1+end2)-(start1+start2))}]")
     
