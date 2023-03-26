@@ -63,5 +63,5 @@ class PROTOCOL:
 system = PROTOCOL()
 
 if __name__ == "__main__":
-    test_path = "/home/eaegon/Documents/GITHUB/General-Python-Useages/FileOrganizer/TEST"
+    test_path = "/"
     system.organize(PurePath(test_path))
